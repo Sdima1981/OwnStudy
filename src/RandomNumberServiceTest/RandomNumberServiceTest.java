@@ -1,6 +1,6 @@
 package RandomNumberServiceTest;
 import java.util.Random;
-
+//
 public class RandomNumberServiceTest {
 
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class RandomNumberServiceTest {
         int thirdRandomNumber = randomGenerator.nextInt (11);
         int sumOfRandomNumbers = firstRandomNumber + secondRandomNumber + thirdRandomNumber;
 
-            System.out.println ("We generated three random numbers within range from 1 to 10");
+            System.out.println ("We generated three random numbers within range from 0 to 10");
             System.out.println ("They are: " + firstRandomNumber + "; " + secondRandomNumber + "; " + thirdRandomNumber + ";");
             System.out.println ("The sum of these three numbers is: " + sumOfRandomNumbers);
         }
