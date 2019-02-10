@@ -1,4 +1,4 @@
-package sign_comparator;
+package signcomparator;
 
 public class SignCimparatorTest {
     public static void main(String[] args){

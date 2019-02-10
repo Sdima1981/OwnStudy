@@ -14,13 +14,13 @@
         Написать тесты, в которых проверяется ожидаемый и
         полученный результат работы метода (см. презентацию).
         Проверить разные сценарии, когда данные совпадают и не совпадают.*/
-package sign_comparator;
+package signcomparator;
 
 public class SignComparator {
     int numberOne;
     int numberTwo;
     int numberThree;
-    int startNumber = 0;
+    private int startNumber = 0;
 
     public int getNumberOne() {
         return numberOne;

@@ -16,42 +16,43 @@
 
         *Написать тесты*/
 
-package light_color_detector;
+package lightcolordetector;
 
 public class LightColorDetector {
 
     int spectreMin = 380;
     int spectreMax = 750;
-    String violet = "The light is Violet";
-    String blue = "The light is Blue";
-    String green = "The light is Green";
-    String yellow = "The light is Yellow";
-    String orange  = "The light is Orange";
-    String red = "The light is Red";
-    String invisible = "The light is not visible!";
+    private String violet = "The light is Violet";
+    private String blue = "The light is Blue";
+    private String green = "The light is Green";
+    private String yellow = "The light is Yellow";
+    private String orange = "The light is Orange";
+    private String red = "The light is Red";
+    private String invisible = "The light is not visible!";
     int wavelength;
 
     public int getWavelength() {
-        return wavelength;}
-        public void setWavelength(int wavelength) {
+        return wavelength;
+    }
+
+    public void setWavelength(int wavelength) {
         this.wavelength = wavelength;
     }
 
-    public void detect(){
-        if((wavelength >= 380) && (wavelength < 450)){
+    public void detect() {
+        if ((wavelength >= 380) && (wavelength < 450)) {
             System.out.println (violet);
-        }else if ((wavelength >= 450) && (wavelength < 495)){
+        } else if ((wavelength >= 450) && (wavelength < 495)) {
             System.out.println (blue);
-        }else if ((wavelength >= 495) && (wavelength < 570)){
+        } else if ((wavelength >= 495) && (wavelength < 570)) {
             System.out.println (green);
-        }else if ((wavelength >= 570) && (wavelength < 590)){
+        } else if ((wavelength >= 570) && (wavelength < 590)) {
             System.out.println (yellow);
-        }else if ((wavelength >= 590) && (wavelength < 620)){
+        } else if ((wavelength >= 590) && (wavelength < 620)) {
             System.out.println (orange);
-        }else if ((wavelength >= 620) && (wavelength < 750)){
+        } else if ((wavelength >= 620) && (wavelength < 750)) {
             System.out.println (red);
-        }
-        else {
+        } else {
             System.out.println (invisible);
         }
     }
