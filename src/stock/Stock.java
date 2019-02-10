@@ -1,5 +1,6 @@
 /*Биржа ценных бумаг открывается утром и создаются все объекты акций с ценой вечернего закрытия.
- Задача: необходимо реализовать класс Stock (акция) таким образом, чтобы была возможность узнать текущую цену акции, а также ее минимальную и максимальную стоимость за день.
+ Задача: необходимо реализовать класс Stock (акция) таким образом, чтобы была возможность узнать текущую цену акции,
+ а также ее минимальную и максимальную стоимость за день.
  Поля класса:
  String company
  double currentValue
@@ -14,8 +15,10 @@
  updatePrice()
  printInformation()
 
- Каждая акция должна описывать к какой компании (company) она относится, а также содержать цену с вечернего закрытия (currentValue). Это значит, что необходим конструктор классаобязательно должен быть с company и currentValue.
- Стоимость акции может меняться в цене и на каждое изменение вызывается метод updatePrice. Метод должен автоматически обновить все состояние акции (если такое возможно).
+ Каждая акция должна описывать к какой компании (company) она относится, а также содержать цену с вечернего закрытия
+ (currentValue). Это значит, что необходим конструктор классаобязательно должен быть с company и currentValue.
+ Стоимость акции может меняться в цене и на каждое изменение вызывается метод updatePrice.
+ Метод должен автоматически обновить все состояние акции (если такое возможно).
 
  Например:
  Биржа ценных бумаг открывается утром, цена акции на момент вечернего закрытия 150$.
@@ -24,7 +27,8 @@
  день меняются в зависимости от пиковых значений.
  После повышения цены со 150$ до 150.37$, текущая и максимальная цена устанавливаются в размере 150.37$,
  а минимальная цена остается неизменной (150$).
- Затем происходит падение цены и стоимость акции падает до 149.82$. Текущая и минимальная цена акции становится 149.82$,
+ Затем происходит падение цены и стоимость акции падает до 149.82$. Текущая и минимальная цена акции
+ становится 149.82$,
  максимальная цена с момента последнего повышения цены не изменилась и осталась в размере 150.37$.
  Stock ibm = new Stock("IBM", 150)
 
@@ -49,13 +53,21 @@ package stock;
 
 public class Stock {
 
-    String company;
-    double currentValue;
-    double max;
-    double min;
+    private String company;
+    private double currentValue;
+    private double max;
+    private double min;
 
     public double getCurrentValue() {
         return currentValue;
+    }
+
+    public void setCurrentValue(double currentValue) {
+        this.currentValue = currentValue;
+        if ((min == 0) && (max == 0)) {
+            setMin (getCurrentValue ());
+            setMax (getCurrentValue ());
+        }
     }
 
     public void setCompany(String company) {
@@ -79,6 +91,9 @@ public class Stock {
     }
 
     void updatePrice(double currentValue) {
+        if (currentValue != currentValue) {
+            this.currentValue = currentValue;
+        }
 
         if (currentValue < min) {
             min = currentValue;
@@ -89,34 +104,15 @@ public class Stock {
         } else if ((currentValue > min) && (currentValue < max)) {
             this.currentValue = currentValue;
         }
-        if (currentValue != currentValue) {
-            currentValue = currentValue;
-        }
-        //System.out.println ("current " + currentValue);
-        //System.out.println ("max " + max);
-        //System.out.println ("min " + min);
     }
 
     void printInformation() {
-        System.out.println ("current " + currentValue);
-        System.out.println ("max " + max);
-        System.out.println ("min " + min);
+        System.out.println ("Stock company: " + company);
+        System.out.println ("current " + getCurrentValue ());
+        System.out.println ("max " + getMax ());
+        System.out.println ("min " + getMin ());
     }
 
-
-    public static void main(String[] args) {
-        Stock stock = new Stock ();
-        stock.company = "IBM";
-        stock.currentValue = 150;
-        stock.min = 150;
-
-
-        stock.updatePrice (150.37);
-        stock.updatePrice (149.82);
-        stock.updatePrice (150.12);
-
-        stock.printInformation ();
-    }
 
 }
 
