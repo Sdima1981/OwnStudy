@@ -96,10 +96,10 @@ public class Stock {
         }
 
         if (currentValue < min) {
-            min = currentValue;
+            this.min = currentValue;
             this.currentValue = currentValue;
         } else if ((currentValue > min) && (currentValue > max)) {
-            max = currentValue;
+            this.max = currentValue;
             this.currentValue = currentValue;
         } else if ((currentValue > min) && (currentValue < max)) {
             this.currentValue = currentValue;
