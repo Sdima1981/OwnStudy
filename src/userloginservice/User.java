@@ -36,10 +36,10 @@ public class User {
     private String login;
     private String password;
     private int loginAttemptsLeft;
-    private boolean blocked = false;
 
-    private String loginIn;
-    private String passwordIn;
+
+    private String userLogin;
+    private String userPassword;
 
     public String getLogin() {
         return login;
@@ -65,67 +65,63 @@ public class User {
         this.loginAttemptsLeft = loginAttemptsLeft;
     }
 
-    public boolean isBlocked() {
-        return blocked;
+    public String getUserLogin() {
+        return userLogin;
     }
 
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 
-    public String getLoginIn() {
-        return loginIn;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setLoginIn(String loginIn) {
-        this.loginIn = loginIn;
-    }
-
-    public String getPasswordIn() {
-        return passwordIn;
-    }
-
-    public void setPasswordIn(String passwordIn) {
-        this.passwordIn = passwordIn;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
     void reset() {
-        loginAttemptsLeft = this.loginAttemptsLeft + 3;
+        setLoginAttemptsLeft (3);
     }
 
     void block() {
-        while (loginAttemptsLeft == 0) {
-            System.out.println("Get the hell out!!!");
+        if (loginAttemptsLeft <= 0) {
+            System.out.println ("Get the hell out!!!");
         }
     }
 
     void oneMoreLogIn() {
-        login();
+        login ();
     }
 
     void login() {
 
-        System.out.println(getLogin() + getPassword());
-        System.out.println(getLoginIn() + getPasswordIn());
-        System.out.println(getLoginAttemptsLeft());
+        Scanner scanner = new Scanner(System.in);
+
+        setUserLogin (scanner.next ());
+        setUserPassword (scanner.next ());
+        //scanner.close();
+
+        System.out.println (getLogin () + getPassword ());
+        System.out.println (getUserLogin () + getUserPassword ());
+        System.out.println (getLoginAttemptsLeft ());
 
 
-         if (( getLogin() !=  getLoginIn()) || (getPassword() != getPasswordIn())) {
-             setLoginAttemptsLeft(loginAttemptsLeft - 1);
-             System.out.println("Try one more time ");
-            // oneMoreLogIn();
-         }
-         else if ((getLoginIn() == getLogin()) && (getPasswordIn() == getPassword())) {
-             System.out.println("Good, we`re in");
-
-
-//        } else {
-//            setLoginAttemptsLeft(loginAttemptsLeft - 1);
-//            System.out.println("Try one more time ");
-//            oneMoreLogIn();
-//        }
+        if (((getUserLogin ()).equals (getLogin ())) && ((getUserPassword ()).equals (getPassword ()))) {
+            System.out.println ("Good, we`re in");
+            reset ();
+            scanner.close ();
+        } else {
+            setLoginAttemptsLeft (loginAttemptsLeft - 1);
+            System.out.println ("Try one more time ");
+            block ();
+            oneMoreLogIn();
         }
 
+
     }
+
 }
+
 
