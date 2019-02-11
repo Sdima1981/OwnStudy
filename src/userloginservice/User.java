@@ -81,46 +81,7 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    void reset() {
-        setLoginAttemptsLeft (3);
-    }
 
-    void block() {
-        if (loginAttemptsLeft <= 0) {
-            System.out.println ("Get the hell out!!!");
-        }
-    }
-
-    void oneMoreLogIn() {
-        login ();
-    }
-
-    void login() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        setUserLogin (scanner.next ());
-        setUserPassword (scanner.next ());
-        //scanner.close();
-
-        System.out.println (getLogin () + getPassword ());
-        System.out.println (getUserLogin () + getUserPassword ());
-        System.out.println (getLoginAttemptsLeft ());
-
-
-        if (((getUserLogin ()).equals (getLogin ())) && ((getUserPassword ()).equals (getPassword ()))) {
-            System.out.println ("Good, we`re in");
-            reset ();
-            scanner.close ();
-        } else {
-            setLoginAttemptsLeft (loginAttemptsLeft - 1);
-            System.out.println ("Try one more time ");
-            block ();
-            oneMoreLogIn();
-        }
-
-
-    }
 
 }
 
