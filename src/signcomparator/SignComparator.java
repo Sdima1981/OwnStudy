@@ -33,34 +33,42 @@ public class SignComparator {
 
     public int getNumberTwo() {
         return numberTwo;
-    }public void setNumberTwo (int numberTwo) {this.numberTwo = numberTwo;}
+    }
 
-    public int getNumberThree (){
+    public void setNumberTwo(int numberTwo) {
+        this.numberTwo = numberTwo;
+    }
+
+    public int getNumberThree() {
         return numberThree;
-    }public void setNumberThree(int numberThree){ this.numberThree = numberThree;}
+    }
 
-    void compare(){
-        if (numberOne > startNumber){
+    public void setNumberThree(int numberThree) {
+        this.numberThree = numberThree;
+    }
+
+    void compare() {
+        if (numberOne > startNumber) {
             System.out.println ("Number: " + numberOne + " is positive");
-        }else if (numberOne == startNumber){
+        } else if (numberOne == startNumber) {
             System.out.println ("Number: " + numberOne + " is equal to zero");
-        }else {
+        } else {
             System.out.println ("Number: " + numberOne + " is negative");
         }
 
-        if (numberTwo > startNumber){
+        if (numberTwo > startNumber) {
             System.out.println ("Number: " + numberTwo + " is positive");
-        }else if (numberTwo == startNumber){
+        } else if (numberTwo == startNumber) {
             System.out.println ("Number: " + numberTwo + " is equal to zero");
-        }else {
+        } else {
             System.out.println ("Number: " + numberTwo + " is negative");
         }
 
-        if (numberThree > startNumber){
+        if (numberThree > startNumber) {
             System.out.println ("Number: " + numberThree + " is positive");
-        }else if (numberThree == startNumber){
+        } else if (numberThree == startNumber) {
             System.out.println ("Number: " + numberThree + " is equal to zero");
-        }else {
+        } else {
             System.out.println ("Number: " + numberThree + " is negative");
         }
     }

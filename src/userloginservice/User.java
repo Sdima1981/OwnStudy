@@ -30,8 +30,6 @@
 
 package userloginservice;
 
-import java.util.Scanner;
-
 public class User {
     private String login;
     private String password;
@@ -80,7 +78,6 @@ public class User {
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
     }
-
 
 
 }

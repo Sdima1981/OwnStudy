@@ -5,7 +5,7 @@ public class Car {
     private String make;
     private int year;
 
-    public String getColor(){
+    public String getColor() {
         return color;
     }
 
@@ -29,7 +29,7 @@ public class Car {
         this.year = year;
     }
 
-    public void printInfo(){
+    public void printInfo() {
         System.out.println ("Cars color is " + getColor ());
         System.out.println ("Cars make is " + getMake ());
         System.out.println ("Cars year is " + getYear ());

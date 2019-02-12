@@ -38,7 +38,7 @@ public class Product {
 
     public void printInformation() {
         System.out.println ("Product : name = " + name + ", regular price = " + regularPrice + "€, discount = " +
-                 discount + "%" + ", actual price = " + calculateActualPrice () + "€");
+                discount + "%" + ", actual price = " + calculateActualPrice () + "€");
     }
 
 }

@@ -12,7 +12,8 @@ public class UserLoginService {
 
     void block() {
         if ((userLoginService.getLoginAttemptsLeft ()) <= 0) {
-            System.out.println ("Get the hell out!!!");
+            System.out.println ("You`ve entered incorrect Password or Login more than 3 times.");
+            System.out.println ("Plese contact somebody about it.");
         }
     }
 
@@ -20,36 +21,44 @@ public class UserLoginService {
         login ();
     }
 
+
     void createNewUser() {
         userLoginService.setLogin ("dima");
         userLoginService.setPassword ("pass");
-        userLoginService.setLoginAttemptsLeft(3);
+        userLoginService.setLoginAttemptsLeft (3);
+
     }
+
 
     public void login() {
 
-        createNewUser ();
+        //    createNewUser ();
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner (System.in);
 
+        System.out.println ("Type in Your Login: ");
         userLoginService.setUserLogin (scanner.next ());
+        System.out.println ("Type in Your password: ");
         userLoginService.setUserPassword (scanner.next ());
         //scanner.close();
 
-        System.out.println (userLoginService.getLogin () + userLoginService.getPassword ());
-        System.out.println (userLoginService.getUserLogin () + userLoginService.getUserPassword ());
-        System.out.println (userLoginService.getLoginAttemptsLeft ());
+        //    System.out.println (userLoginService.getLogin () + userLoginService.getPassword ());
+        //    System.out.println (userLoginService.getUserLogin () + userLoginService.getUserPassword ());
+        //    System.out.println (userLoginService.getLoginAttemptsLeft ());
 
 
-        if (((userLoginService.getUserLogin ()).equals (userLoginService.getLogin ())) && ((userLoginService.getUserPassword ()).equals (userLoginService.getPassword ()))) {
-            System.out.println ("Good, we`re in");
+        if ((((userLoginService.getLoginAttemptsLeft ()) > 0) && (userLoginService.getUserLogin ()).equals (userLoginService.getLogin ())) && ((userLoginService.getUserPassword ()).equals (userLoginService.getPassword ()))) {
+            System.out.println ("Good, now You`re logged in!");
             reset ();
             scanner.close ();
-        } else {
+        } else if ((userLoginService.getLoginAttemptsLeft ()) > 0) {
+            System.out.println ("Incorrect Login or password.");
+            System.out.println ("Try one more time:");
             userLoginService.setLoginAttemptsLeft (userLoginService.getLoginAttemptsLeft () - 1);
-            System.out.println ("Try one more time ");
+            oneMoreLogIn ();
+        } else if ((userLoginService.getLoginAttemptsLeft ()) <= 0) {
+            scanner.close ();
             block ();
-            oneMoreLogIn();
         }
 
 

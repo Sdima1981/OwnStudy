@@ -1,7 +1,7 @@
 package signcomparator;
 
 public class SignCimparatorTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SignComparator signComparator = new SignComparator ();
         signComparator.numberOne = 5;
         signComparator.numberTwo = -5;
