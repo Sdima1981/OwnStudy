@@ -14,7 +14,7 @@ public class Circle {
 
     void calculateArea() {
         double area = 3.14 * radius * radius;
-        System.out.println ("With circle radius equals " + radius);
+        System.out.println ("With circle radius equals to " + radius);
         System.out.println ("Circle area will be " + area);
 
     }
