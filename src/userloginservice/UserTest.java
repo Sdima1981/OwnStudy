@@ -7,7 +7,6 @@ public class UserTest {
 
         UserLoginService user = new UserLoginService ();
 
-        user.createNewUser ();
         user.login ();
 
     }

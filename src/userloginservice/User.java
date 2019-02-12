@@ -31,8 +31,8 @@
 package userloginservice;
 
 public class User {
-    private String login;
-    private String password;
+    private String login = "empty";
+    private String password = "empty";
     private int loginAttemptsLeft;
 
 
