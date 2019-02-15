@@ -34,6 +34,7 @@ public class User {
     private String login = "empty";
     private String password = "empty";
     private int loginAttemptsLeft;
+    private boolean blocked;
 
 
     private String userLogin;
@@ -61,6 +62,14 @@ public class User {
 
     public void setLoginAttemptsLeft(int loginAttemptsLeft) {
         this.loginAttemptsLeft = loginAttemptsLeft;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     public String getUserLogin() {
