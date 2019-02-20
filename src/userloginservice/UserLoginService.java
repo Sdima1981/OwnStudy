@@ -1,53 +1,63 @@
-/*
 package userloginservice;
 
 
 public class UserLoginService {
 
-
-    public boolean login(String userPassword, User user) {
-        if () == true) {
-            user.setLoginAttemptsLeft (3);
-            System.out.println ("OK");
-            return true;
-        } else {
-            verify ();
-            System.out.println ("Not OK");
-            return false;
-        }
+    public static void main(String[] args) {
+        UserLoginService test = new UserLoginService ();
+        User user = new User ();
+        test.login ("dima", user);
 
     }
 
-    public boolean verify() {
-        if (!(user.isBlocked ())) {
-            System.out.println ("User is not blocked");
+
+
+
+    public boolean login(String userPassword, User user) {
+        if (verify ("dima", "pass").equals ("Login OK")){
             return true;
+        }else {
+            return false;
+        }
+
+
+    }
+
+
+    public String verify(String userLogin, String userPassword) {
+
+        User myUser = new User ();
+        myUser.setLogin ("dima");
+        myUser.setPassword ("pass");
+        myUser.setLoginAttemptsLeft (3);
+
+
+        if ((myUser.getLogin ()).equals (userLogin)) {
+            return "Login OK";
 
         } else {
-            System.out.println ("User is blocked");
-            return false;
+            myUser.setLoginAttemptsLeft (myUser.getLoginAttemptsLeft () - 1);
+            return "Wrong login";
+            verify (userLogin, userPassword);
 
         }
-        if ((user.getLogin ()).equals (userLogin)) {
-            System.out.println ("Login OK");
-            return true;
-
-        } else {
-            user.setLoginAttemptsLeft (user.getLoginAttemptsLeft () - 1);
-            System.out.println ("Login NOT OK");
-            return false;
-
-        }
-        if ((user.getPassword ()).equals (userPassword)) {
-            System.out.println ("Pass OK");
-            return true;
+        if ((myUser.getPassword ()).equals (userPassword)) {
+            System.out.println ();
+            return "Password OK";
         } else {
             System.out.println ("Pass NOT OK");
-            return false;
+            return "wrong Password";
+            verify (userLogin, userPassword);
+        }
+        if (!(myUser.isBlocked ())) {
+            return "User is not blocked";
+
+        } else {
+            return "User is blocked";
+
         }
 
     }
 
 
 }
-*/
