@@ -65,13 +65,17 @@ public class Stock {
     public void setCurrentValue(double currentValue) {
         this.currentValue = currentValue;
         if ((min == 0) && (max == 0)) {
-            setMin(getCurrentValue());
-            setMax(getCurrentValue());
+            setMin (getCurrentValue ());
+            setMax (getCurrentValue ());
         }
     }
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getCompany() {
+        return company;
     }
 
     public double getMax() {
@@ -90,27 +94,27 @@ public class Stock {
         this.min = min;
     }
 
-    void updatePrice(double currentValue) {
-        if (currentValue != currentValue) {
-            this.currentValue = currentValue;
-        }
+    String updatePrice(Stock stock, double currentValue) {
 
-        if (currentValue < min) {
-            this.min = currentValue;
-            this.currentValue = currentValue;
-        } else if ((currentValue > min) && (currentValue > max)) {
+        if ((currentValue > min) && (currentValue > max)) {
             this.max = currentValue;
             this.currentValue = currentValue;
+            return "max change";
         } else if ((currentValue > min) && (currentValue < max)) {
             this.currentValue = currentValue;
+            return "current change";
+        } else {
+            this.min = currentValue;
+            this.currentValue = currentValue;
+            return "min change";
         }
     }
 
     void printInformation() {
-        System.out.println("Stock company: " + company);
-        System.out.println("current " + getCurrentValue());
-        System.out.println("max " + getMax());
-        System.out.println("min " + getMin());
+//        System.out.println ("Stock company: " + company);
+        System.out.println (getCompany () + ".current " + getCurrentValue ());
+        System.out.println (getCompany () + ".max " + getMax ());
+        System.out.println (getCompany () + ".min " + getMin ());
     }
 
 

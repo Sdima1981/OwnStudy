@@ -31,14 +31,10 @@
 package userloginservice;
 
 public class User {
-    private String login = "empty";
-    private String password = "empty";
+    private String login;
+    private String password;
     private int loginAttemptsLeft;
     private boolean blocked;
-
-
-    private String userLogin;
-    private String userPassword;
 
     public String getLogin() {
         return login;
@@ -72,20 +68,14 @@ public class User {
         this.blocked = blocked;
     }
 
-    public String getUserLogin() {
-        return userLogin;
+    public void block() {
+        if (getLoginAttemptsLeft () <= 0) {
+            setBlocked (true);
+        }
     }
 
-    public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void reset() {
+        setLoginAttemptsLeft (3);
     }
 
 

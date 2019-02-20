@@ -1,53 +1,53 @@
+/*
 package userloginservice;
 
-import java.util.Scanner;
 
 public class UserLoginService {
-    User userLoginService = new User();
 
-    void reset() {
-        userLoginService.setLoginAttemptsLeft(3);
-    }
 
-    void block() {
-        System.out.println("You`ve entered incorrect Password or Login more than 3 times.");
-        System.out.println("Plese contact somebody about it.");
-    }
-
-    void createNewUser() {
-        if ((userLoginService.getLogin()).equals("empty")) {
-            userLoginService.setLogin("dima");
-            userLoginService.setPassword("pass");
-            userLoginService.setLoginAttemptsLeft(3);
+    public boolean login(String userPassword, User user) {
+        if () == true) {
+            user.setLoginAttemptsLeft (3);
+            System.out.println ("OK");
+            return true;
+        } else {
+            verify ();
+            System.out.println ("Not OK");
+            return false;
         }
 
     }
 
-    public void login() {
+    public boolean verify() {
+        if (!(user.isBlocked ())) {
+            System.out.println ("User is not blocked");
+            return true;
 
-        createNewUser();
-        userLoginService.setLoginAttemptsLeft(userLoginService.getLoginAttemptsLeft() - 1);
+        } else {
+            System.out.println ("User is blocked");
+            return false;
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in Your Login: ");
-        userLoginService.setUserLogin(scanner.next());
-        System.out.println("Type in Your password: ");
-        userLoginService.setUserPassword(scanner.next());
+        }
+        if ((user.getLogin ()).equals (userLogin)) {
+            System.out.println ("Login OK");
+            return true;
 
-        if ((((userLoginService.getLoginAttemptsLeft()) > 0) && (userLoginService.getUserLogin()).equals(userLoginService.getLogin())) && ((userLoginService.getUserPassword()).equals(userLoginService.getPassword()))) {
-            System.out.println("Good, now You`re logged in!");
-            reset();
-            scanner.close();
-        } else if ((userLoginService.getLoginAttemptsLeft()) > 0) {
-            System.out.println("Incorrect Login or password.");
-            System.out.println("Try one more time:");
+        } else {
+            user.setLoginAttemptsLeft (user.getLoginAttemptsLeft () - 1);
+            System.out.println ("Login NOT OK");
+            return false;
 
-            login();
-        } else if ((userLoginService.getLoginAttemptsLeft()) < 1) {
-            scanner.close();
-            block();
+        }
+        if ((user.getPassword ()).equals (userPassword)) {
+            System.out.println ("Pass OK");
+            return true;
+        } else {
+            System.out.println ("Pass NOT OK");
+            return false;
         }
 
-
     }
+
+
 }
+*/
