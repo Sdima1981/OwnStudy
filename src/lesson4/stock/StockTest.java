@@ -19,7 +19,7 @@ public class StockTest {
         victim.setMax (20);
 
         String expectedResult = "min change";
-        String actualResult = victim.updatePrice (victim, 10);
+        String actualResult = victim.updatePrice (10);
         if (expectedResult.equals (actualResult)) {
             System.out.println ("minimumPriceCange: SUCCESS");
         } else {
@@ -35,7 +35,7 @@ public class StockTest {
         victim.setMax (20);
 
         String expectedResult = "max change";
-        String actualResult = victim.updatePrice (victim, 30);
+        String actualResult = victim.updatePrice (30);
         if (expectedResult.equals (actualResult)) {
             System.out.println ("maximumPriceCange: SUCCESS");
         } else {
@@ -51,7 +51,7 @@ public class StockTest {
         victim.setMax (50);
 
         String expectedResult = "current change";
-        String actualResult = victim.updatePrice (victim, 30);
+        String actualResult = victim.updatePrice (30);
         if (expectedResult.equals (actualResult)) {
             System.out.println ("currentPriceCange: SUCCESS");
         } else {

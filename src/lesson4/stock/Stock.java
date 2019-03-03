@@ -43,7 +43,7 @@ public class Stock {
         this.min = min;
     }
 
-    String updatePrice(Stock stock, double currentValue) {
+    String updatePrice(double currentValue) {
 
         if ((currentValue > min) && (currentValue > max)) {
             this.max = currentValue;

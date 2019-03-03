@@ -1,6 +1,5 @@
 package lesson4.userloginservice;
 
-import java.util.Objects;
 
 public class User {
 
