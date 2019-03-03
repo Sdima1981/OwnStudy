@@ -30,7 +30,6 @@ class PrimeNumberSum {
             return false;
         }
 
-
         for (int i = 2; i < from; i++) {
             if (from % i == 0) {
                 return false;
@@ -39,7 +38,6 @@ class PrimeNumberSum {
         }
 
         return true;
-
 
     }
 }
