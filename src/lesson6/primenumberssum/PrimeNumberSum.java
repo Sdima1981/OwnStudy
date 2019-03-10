@@ -20,8 +20,8 @@ class PrimeNumberSum {
 
         }
 
-        System.out.println (result);
-        System.out.println (counter);
+        System.out.println ("The SUM of all Prime numbers in range grom 1 to 500 is " + result);
+        System.out.println ("The total count of all Primes in this range is " + counter);
     }
 
     private boolean isPrimeNumber(int from) {
