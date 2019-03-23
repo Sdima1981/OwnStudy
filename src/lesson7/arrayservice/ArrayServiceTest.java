@@ -8,9 +8,9 @@ class ArrayServiceTest {
     public static void main(String[] args) {
         ArrayServiceTest testRunner = new ArrayServiceTest ();
 
-    //    testRunner.shouldCreateNewArray ();
-    //    testRunner.shouldSumNumbersInArray ();
-    //    testRunner.shouldFillArrayWithRandomNumbers ();
+        testRunner.shouldCreateNewArray ();
+        testRunner.shouldSumNumbersInArray ();
+        testRunner.shouldFillArrayWithRandomNumbers ();
         testRunner.simpleArrayOperations ();
     }
 
